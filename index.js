@@ -12,8 +12,8 @@ const callApi = (para) => {
         return resp.json();
       })
       .then((data) => {
-        h1.innerHTML = data.setup;
-        h2.innerHTML = data.delivery;
+        h1.innerHTML = `setup: ${data.setup}`;
+        h2.innerHTML = `Delivery: ${data.delivery}`;
       });
   } else if (para === 2) {
     const requestOptions = {
@@ -32,7 +32,7 @@ const callApi = (para) => {
 
 let btn1 = document
   .querySelector("#btn1")
-  .addEventListener("click", callApi(1));
+  .addEventListener("fetch", callApi(1));
 let btn2 = document
   .querySelector("#btn2")
-  .addEventListener("click", callApi(2));
+  .addEventListener("fetch", callApi(2));
